@@ -22,8 +22,16 @@
 // SOFTWARE.
 
 // A minimal program for spying on the NES controller's shift
-// register protocol and simply logging the button state to
-// the serial port.
+// register protocol and at the same time emulating the 4021
+// shift register so as to present a fake NES controller with the
+// state of the first controller.
+//
+// NOTE: This requires an Arduino compatible board supporting
+// at least six digital IO pins including four that support
+// interrupt handling.
+// NOTE: Arduino Uno/Nano/Duemilanove only support two external
+// interrupt pins, and so they aren't compatible with this.
+// NOTE: This was developed using a Teensy 3.2 board.
 
 // Specify the digital pins you've connected the NES controller
 // wires to here...
